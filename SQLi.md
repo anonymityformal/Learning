@@ -42,7 +42,7 @@ Blind SQLi: như tên, không thể thấy, ta có thể khai thác, dự đoán
 
 
 ### Trải nghiệm
-
+`PortSwigger`
 #### Lab: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data
 Input parameter category: 
 '+OR+'1'='1
