@@ -102,7 +102,7 @@ Cookie: TrackingId'
 Input cookie: 
 Cookie: TrackingId' 
 
-#### Lab: ## Blind SQL injection with time delays
+#### Lab: Blind SQL injection with time delays
 Input cookie: 
 Using query PostgreSQL
 Cookie: TrackingId'||pg_sleep(10)--
