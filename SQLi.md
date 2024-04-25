@@ -64,13 +64,21 @@ Khi nhìn vào bài lab thì cần chú ý là những nơi có thể nhập li�
 - Liệu còn cách nào khác để khai thác không ?
 #### Lab: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data
 Đề bài đã cho gợi ý về lỗ hổng sqli nằm ở danh mục phân loại sản phẩm. Và câu truy vấn mỗi khi phân loại sản phẩm là: 
+
 **SELECT * FROM products WHERE category = '?'**
+
 Khi nhìn vào bài lab thì điều đầu tiên cần chú ý là nơi có thể nhập liệu. Thì ở đây, nơi nhập liệu là phân loại sản phẩm trên url. Theo suy nghĩ thì đây có thể là nơi xảy ra lỗ hổng.
+
 Vì nơi đây cho phép sử dụng **'** nên tôi có thể thêm một số lệnh phổ biến đường sau **'** để kiểm tra lỗ hổng này.
-Câu lệnh khai thác là: **' OR '1'='1** (Câu lệnh tuỳ theo mỗi trường hợp, có những trang web họ chặn thì mình cần tìm câu lệnh khai thác khác để phù hợp) 
+
+Câu lệnh khai thác là: **' OR '1'='1** (Câu lệnh tuỳ theo mỗi trường hợp, có những trang web họ chặn thì mình cần tìm câu lệnh khai thác khác để phù hợp).
+
 Ở đây sử dụng **'** để bypass (việc dùng ký tự khác để bypass phụ thuộc vào trang web), **OR** là hoặc, **1=1** thì luôn đúng cho nên nó sẽ thực hiện câu lệnh **1=1**
+
 *Payload:*  **/filter?category=?' OR '1'='1**
+
 Sau khi thực hiện các câu truy vấn thì lỗ hổng đã xảy ra, liệt kê thành công và bài lab hoàn thành.
+
 ***Success***
 #### Lab: SQL injection vulnerability allowing login bypass
 Đề bài đã cho gợi ý về lỗ hổng sqli nằm ở phần đăng nhập tài khoản. Thì ở đây khi đăng nhập thì bài yêu cầu đăng nhập tài khoản **administrator**. Nhưng ở đây không hề có mật khẩu.
